@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function attendre(secondes) {
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                resolve("fini")
+            }, secondes * 1000)
+        })
+    }
+
+    function affichage(produits) {
+        for(let produit of produits){
+            document.body.innerHTML += `<div>${produit.id} => ${produit.nom}</div>`
+        }
+    }
+    
+    function chargerProduit(){
+        return new Promise(function (resolve, reject) {
+            let req = new XMLHttpRequest()
+            req.open('get', 'produits.json')
+            req.onreadystatechange = function () {
+                if(req.readyState == 4){
+                    if(req.status==200){
+                        resolve(JSON.parse(req.response))
+                    }else{
+                        reject(`Erreur : ${req.status}`)
+                    }
+                }
+            }
+            req.send()
+        })
+    }
+    attendre(2)
+        .then(chargerProduit)
+        .then(affichage)
+
+</script>
+
+
+</body>
+</html>
