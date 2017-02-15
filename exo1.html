@@ -30,7 +30,7 @@
                     if(req.status==200){
                         resolve(JSON.parse(req.response))
                     }else{
-                        reject(`Erreur : ${req.status}`)
+                        reject(`Erreur gros nase : ${req.status}`)
                     }
                 }
             }
@@ -40,6 +40,9 @@
     attendre(2)
         .then(chargerProduit)
         .then(affichage)
+        .catch(function (err) {
+            alert(err)
+        })
 
 </script>
 
