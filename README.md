@@ -1,7 +1,7 @@
 # formation_angular
 
-[Présentation (merci @ltearno)](http://lteconsulting.fr/angular/)
-[TP](http://lteconsulting.fr/angular/travaux-pratiques.html)
+- [Présentation (merci @ltearno)](http://lteconsulting.fr/angular/)
+- [TP](http://lteconsulting.fr/angular/travaux-pratiques.html)
 
 ## Example des promises en es6
 la feuille exo_1.html montre un example des promises en es6
