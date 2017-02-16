@@ -66,3 +66,6 @@ On peut filtrer les évènements du genre ```keydown.space```.
 ```html
 <input [(ngModel)]="hero.name" />
 ```
+
+## Préconisations
+- Il vaut mieux préfixer ses component (genre app-moncomposant)
