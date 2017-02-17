@@ -1,0 +1,9 @@
+<h1>Licornie</h1>
+<br/>
+<div class="container">
+  <app-lili class="child" [licornes]="licornes"  (selectedLicorne)="afficheLicorneSelectionne($event)"></app-lili>
+  <div class="child" *ngIf="selectedLicorne">
+    <app-lide [licorne]="selectedLicorne"></app-lide>
+    <app-mod-li [licornes]="licornes" [licorne]="selectedLicorne"  [pouvoirs]="pouvoirs"></app-mod-li>
+  </div>
+</div>

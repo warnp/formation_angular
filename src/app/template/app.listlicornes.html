@@ -1,0 +1,3 @@
+<ul>
+  <li  *ngFor="let l of licornes;let odd = odd;" (click)="selectLicorne(l)" [style.backgroundColor]="odd?'#bed9d6':'#d9dddb'">{{l.nom}}</li>
+</ul>

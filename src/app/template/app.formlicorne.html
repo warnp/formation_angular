@@ -1,0 +1,30 @@
+<form (ngSubmit)="onSubmit()" #licornForm="ngForm">
+  <div>
+    <label for="id">ID </label>
+    <input id="id" required type="number" [(ngModel)]="licorne.id" name="id" #id="ngModel">
+  </div>
+  <div>
+    <label for="nom" >Nom </label>
+    <input id="nom" required type="text" [(ngModel)]="licorne.nom" name="nom" #nom="ngModel" #nomLicorne>
+  </div>
+  <div>
+    <label for="couleur">Couleur</label>
+    <input id="couleur" type="text" [(ngModel)]="licorne.color" name="couleur">
+  </div>
+  <div>
+    <label for="pouvoir">Pouvoir</label>
+    <select id="pouvoir" required type="text" [(ngModel)]="licorne.pouvoir" name="pouvoir">
+      <option *ngFor="let p of pouvoirs" [ngValue]="p">{{p.nom}}</option>
+    </select>
+  </div>
+  {{nomLicorne.classList}}
+  <div [hidden]="id.valid || id.pristine" class="alert alert-danger">L'id doit être un numérique</div>
+  <div [hidden]="nom.valid || nom.pristine" class="alert alert-danger">Le nom est requis</div>
+  <div><input type="submit" class="btn btn-success" [disabled]="!licornForm.form.valid" /></div>
+</form>
+
+<div>
+  <button (click)="onAdd()" >Ajouter une licorne</button>
+  <button (click)="onDelete()">Supprimer une licorne</button>
+</div>
+

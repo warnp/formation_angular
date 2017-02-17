@@ -1,0 +1,14 @@
+.toto{
+  font-size: 20px;
+}
+
+.container{
+  display: flex;
+  height:500px;
+}
+
+.child{
+  width:200px;
+  height: 450px;
+  margin: auto;
+}

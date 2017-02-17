@@ -1,0 +1,2 @@
+<h1 [ngStyle]="{backgroundColor : licorne.color}" >Nom :<span *ngIf="licorne && licorne.id >=0&& licorne.nom && licorne.color && licorne.pouvoir"> {{licorne.nom}}</span></h1>
+<h2>Pouvoir : <span *ngIf="licorne && licorne.id >=0&& licorne.nom && licorne.color && licorne.pouvoir">{{licorne.pouvoir.nom}}</span>  </h2>
